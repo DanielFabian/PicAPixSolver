@@ -41,23 +41,29 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-#board {
-    border: lightgray;
+#board, #board * {
+    border-color: #606060;
     border-width: 1px;
     border-style: solid;
+}
+
+#board {    
+    border-width: 2px;
     margin-top: 50px;
 }
 
 #board tr {
-    border: lightgray;
-    border-width: 1px;
-    border-style: solid;
     height: 20px;
 }
 
+#board tr:nth-child(5n+0) {
+    border-bottom-width: 2px;
+}
+
+#board td:nth-child(5n+0) {
+    border-right-width: 2px;
+}
+
 #board td {
-    border: lightgray;
-    border-width: 1px;
-    border-style: solid;
     width: 20px;
 }
