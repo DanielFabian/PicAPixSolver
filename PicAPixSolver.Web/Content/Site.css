@@ -40,3 +40,24 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+#board {
+    border: lightgray;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 50px;
+}
+
+#board tr {
+    border: lightgray;
+    border-width: 1px;
+    border-style: solid;
+    height: 20px;
+}
+
+#board td {
+    border: lightgray;
+    border-width: 1px;
+    border-style: solid;
+    width: 20px;
+}

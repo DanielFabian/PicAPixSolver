@@ -1,0 +1,14 @@
+﻿@using System.Drawing
+<div>
+    <table id="board">
+    @for (var i = 0; i <= @Model.GetUpperBound(0); i++)
+    {
+        <tr>
+            @for (var j = 0; j <= @Model.GetUpperBound(1); j++)
+            {
+                <td style="background-color: @Model[i, j];"></td>
+            }
+        </tr>
+    }
+    </table>
+</div>
