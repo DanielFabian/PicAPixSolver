@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8E0E3B
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PicAPixSolver.Web.Test", "PicAPixSolver.Web.Test\PicAPixSolver.Web.Test.fsproj", "{0C6B1312-0414-4BB9-A13C-C234BB021DFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{5C6B3C0E-F342-4B5B-87EE-61F4BDB34FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C6B3C0E-F342-4B5B-87EE-61F4BDB34FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C6B3C0E-F342-4B5B-87EE-61F4BDB34FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6B1312-0414-4BB9-A13C-C234BB021DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6B1312-0414-4BB9-A13C-C234BB021DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6B1312-0414-4BB9-A13C-C234BB021DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6B1312-0414-4BB9-A13C-C234BB021DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,12 +7,13 @@ type Problem =
     { Vertical : Number list list
       Horizontal : Number list list }
 
-
 let asBlack numbers =
     let black = 0uy, 0uy, 0uy
     
     numbers
     |> List.map (List.map (fun n -> n, black)) 
+
+let white = 255uy, 255uy, 255uy
 
 let problem1 =
     let vertical =
@@ -35,6 +36,24 @@ let problem1 =
 
     { Vertical = asBlack vertical
       Horizontal = asBlack horizontal }
+
+let candidates length numbers =
+    let rec candidates = function
+        | 0, [], _ -> [[]]
+        | len, [], _ when len > 0 -> [List.replicate len white]
+        | len, [], _ -> []
+        | l, (num, col)::rest, _ when num > l -> []
+        | l, ((num, col)::rest as numbers), oldCol ->
+            [
+                if Some col = oldCol then
+                    yield! candidates (l - (num + 1), rest, Some col) |> List.map (fun l -> white :: List.replicate num col @ l)
+                else
+                    yield! candidates (l - num, rest, Some col) |> List.map (fun l -> List.replicate num col @ l)
+                yield! candidates (l - 1, numbers, oldCol) |> List.map (fun l -> white :: l)
+            ]
+
+    candidates (length, numbers, None)
+    //|> List.map (fun l -> l |> List.map (fun (num, col) -> List.replicate num col) |> List.concat)
 
 let defaultModel =
     let x, y = 30, 40
