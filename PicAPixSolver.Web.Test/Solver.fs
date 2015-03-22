@@ -9,27 +9,30 @@ let r = 255uy, 0uy, 0uy
 let g = 0uy, 255uy, 0uy
 let w = white
 
+let toCol = function
+    | 0uy, 0uy, 0uy -> "b"
+    | 255uy, 0uy, 0uy -> "r"
+    | 0uy, 255uy, 0uy -> "g"
+    | 255uy, 255uy, 255uy -> "w"
+    | color -> sprintf "%A" color
+
+
 let candidatesMatch l n exp =
-    let toCol = function
-        | 0uy, 0uy, 0uy -> "b"
-        | 255uy, 0uy, 0uy -> "r"
-        | 0uy, 255uy, 0uy -> "g"
-        | 255uy, 255uy, 255uy -> "w"
-        | color -> sprintf "%A" color
 
     let cands = candidates l n
     if cands <> exp then
         printfn "candidates:"
-        cands |> List.iter (fun cands ->
-            List.map toCol cands
-            |> String.concat " "
-            |> printfn "%s")
+        let print =
+            List.iter (
+                List.map toCol
+                >> String.concat " "
+                >> printfn "%s")
+
+        print cands
 
         printfn "expected:"
-        exp |> List.iter (fun exp ->
-            List.map toCol exp
-            |> String.concat " "
-            |> printfn "%s")
+
+        print exp
         Assert.Fail()
 
 let [<Test>] ``candidates 3 [3, b]`` () =
@@ -75,3 +78,32 @@ let [<Test>] ``candidates 5 [1, b; 1, r; 1, r]`` () =
          [b; r; w; w; r]
          [b; w; r; w; r]
          [w; b; r; w; r]]
+
+let constraintsMatch l n exp =
+    let constraints = candidates l n |> constraintSets
+    let exp = List.map Set.ofList exp
+    if constraints <> exp then
+        printfn "constraints:"
+        let print =
+            List.map (
+                Set.map toCol
+                >> String.concat ", "
+                >> sprintf "{%s}")
+            >> String.concat "; " 
+            >> printfn "[%s]"
+
+        print constraints
+
+        printfn "expected:"
+
+        print exp
+
+        Assert.Fail()
+
+let [<Test>] ``constraintSets 3 [2, b]`` () =
+    constraintsMatch 3 [2, b] 
+        [[b;w]; [b]; [b;w]]
+
+let [<Test>] ``constraintSets 3 [1, b; 1, b]`` () =
+    constraintsMatch 3 [1, b; 1, b] 
+        [[b]; [w]; [b]]

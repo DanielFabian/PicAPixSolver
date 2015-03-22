@@ -53,7 +53,12 @@ let candidates length numbers =
             ]
 
     candidates (length, numbers, None)
-    //|> List.map (fun l -> l |> List.map (fun (num, col) -> List.replicate num col) |> List.concat)
+
+let constraintSets candidates =
+    let len = List.head candidates |> List.length
+    candidates
+    |> List.fold (List.map2 (fun possibleColors fieldColor -> Set.add fieldColor possibleColors))
+        (List.replicate len Set.empty)    
 
 let defaultModel =
     let x, y = 30, 40
