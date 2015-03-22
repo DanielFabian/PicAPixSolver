@@ -77,7 +77,9 @@ let buildDlxMatrix problem =
         Array.init height (fun _ ->
             Array.init width (fun _ ->
                 Array.init colors.Count (fun _ ->
-                    [| Array.zeroCreate (height * width); Array.zeroCreate height; Array.zeroCreate width |])))
+                    Array.init 2 (fun _ ->
+                        Array.init height (fun _ ->
+                            Array.zeroCreate width)))))
 
     let nColors = colors.Count
 
@@ -85,17 +87,12 @@ let buildDlxMatrix problem =
     let inline idx x y =
         x * width + y
 
-    for i = 0 to height - 1 do
-        for j = 0 to width - 1 do
-            for k = 0 to nColors - 1 do
-                dlxMatrix.[i].[j].[k].[0].[idx i j] <- 1
-
     problem.Vertical
     |> List.iteri (fun row line -> 
         candidates width line
         |> constraintSets
         |> List.iteri (fun col ->
-            Set.iter (fun color -> dlxMatrix.[row].[col].[colors.[color]].[1].[row] <- 1)))
+            Set.iter (fun color -> dlxMatrix.[row].[col].[colors.[color]].[0].[row].[col] <- 1)))
 
 
     problem.Horizontal
@@ -103,7 +100,7 @@ let buildDlxMatrix problem =
         candidates width line
         |> constraintSets
         |> List.iteri (fun row ->
-            Set.iter (fun color -> dlxMatrix.[row].[col].[colors.[color]].[2].[col] <- 1)))
+            Set.iter (fun color -> dlxMatrix.[row].[col].[colors.[color]].[1].[row].[col] <- 1)))
 
     dlxMatrix
 
@@ -112,14 +109,14 @@ let dlxToArray2D dlxMatrix =
     let width = Array.length dlxMatrix.[0]
     let nColors = Array.length dlxMatrix.[0].[0]
 
-    Array2D.init (height * width * nColors) (height * width + height + width) (fun i j ->
+    Array2D.init (height * width * nColors) (2 * height * width) (fun i j ->
         let color = i % nColors
         let col = i / nColors % width
         let row = i / nColors / width
-        match j with
-        | pos when pos < height * width -> (dlxMatrix.[row].[col].[color] : _ [][]).[0].[pos]
-        | v when v < height * width + height -> dlxMatrix.[row].[col].[color].[1].[v - height * width]
-        | h -> dlxMatrix.[row].[col].[color].[2].[h - height * width - height])
+        let hv = j / height / width
+        let row2 = j % (height * width) / width
+        let col2 = j % width
+        (dlxMatrix.[row].[col].[color] : _ [][][]).[hv].[row2].[col2])
     
 let defaultModel =
 //    let x, y = 30, 40
