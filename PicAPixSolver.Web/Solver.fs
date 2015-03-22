@@ -60,10 +60,77 @@ let constraintSets candidates =
     |> List.fold (List.map2 (fun possibleColors fieldColor -> Set.add fieldColor possibleColors))
         (List.replicate len Set.empty)    
 
+let buildDlxMatrix problem = 
+    let colors =
+        problem.Vertical @ problem.Horizontal
+        |> List.map (List.map snd >> set)
+        |> Set.unionMany
+        |> Set.add white
+        |> Set.toList
+        |> List.rev
+        |> List.mapi (fun i c -> c, i)
+        |> Map.ofList
+
+    let height, width = problem.Vertical.Length, problem.Horizontal.Length
+
+    let dlxMatrix = 
+        Array.init height (fun _ ->
+            Array.init width (fun _ ->
+                Array.init colors.Count (fun _ ->
+                    [| Array.zeroCreate (height * width); Array.zeroCreate height; Array.zeroCreate width |])))
+
+    let nColors = colors.Count
+
+
+    let inline idx x y =
+        x * width + y
+
+    for i = 0 to height - 1 do
+        for j = 0 to width - 1 do
+            for k = 0 to nColors - 1 do
+                dlxMatrix.[i].[j].[k].[0].[idx i j] <- 1
+
+    problem.Vertical
+    |> List.iteri (fun row line -> 
+        candidates width line
+        |> constraintSets
+        |> List.iteri (fun col ->
+            Set.iter (fun color -> dlxMatrix.[row].[col].[colors.[color]].[1].[row] <- 1)))
+
+
+    problem.Horizontal
+    |> List.iteri (fun col line -> 
+        candidates width line
+        |> constraintSets
+        |> List.iteri (fun row ->
+            Set.iter (fun color -> dlxMatrix.[row].[col].[colors.[color]].[2].[col] <- 1)))
+
+    dlxMatrix
+
+let dlxToArray2D dlxMatrix =
+    let height = Array.length dlxMatrix
+    let width = Array.length dlxMatrix.[0]
+    let nColors = Array.length dlxMatrix.[0].[0]
+
+    Array2D.init (height * width * nColors) (height * width + height + width) (fun i j ->
+        let color = i % nColors
+        let col = i / nColors % width
+        let row = i / nColors / width
+        match j with
+        | pos when pos < height * width -> (dlxMatrix.[row].[col].[color] : _ [][]).[0].[pos]
+        | v when v < height * width + height -> dlxMatrix.[row].[col].[color].[1].[v - height * width]
+        | h -> dlxMatrix.[row].[col].[color].[2].[h - height * width - height])
+    
 let defaultModel =
-    let x, y = 30, 40
-    Array2D.init x y (fun i j ->
-        let r = i * 255 / (x - 1)
-        let g = j * 255 / (y - 1)
-        let b = 255
-        sprintf "#%02x%02x%02x" r g b)
+//    let x, y = 30, 40
+//    Array2D.init x y (fun i j ->
+//        let r = i * 255 / (x - 1)
+//        let g = j * 255 / (y - 1)
+//        let b = 255
+//        sprintf "#%02x%02x%02x" r g b)
+    buildDlxMatrix problem1
+    |> dlxToArray2D
+    |> Array2D.map (
+        function
+        | 0 -> "#ffffff"
+        | _ -> "#000000")
