@@ -107,3 +107,16 @@ let [<Test>] ``constraintSets 3 [2, b]`` () =
 let [<Test>] ``constraintSets 3 [1, b; 1, b]`` () =
     constraintsMatch 3 [1, b; 1, b] 
         [[b]; [w]; [b]]
+
+let [<Test>] ``problem 1 should terminate`` () =
+    solve problem1 |> ignore
+
+let [<Test>] ``problem 2 should terminate`` () =
+    solve problem2 |> ignore
+
+let [<Test>] ``problem 3 should terminate`` () =
+    solve problem3 |> ignore
+
+let [<Test>] ``problem 4 should terminate`` () =
+    solve problem4 |> ignore
+
