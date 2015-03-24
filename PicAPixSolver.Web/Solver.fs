@@ -413,5 +413,5 @@ let defaultModel =
 //        let g = j * 255 / (y - 1)
 //        let b = 255
 //        sprintf "#%02x%02x%02x" r g b)
-    solve problem4
+    solve problem1
     |> Array2D.map (fun (r, g, b) -> sprintf "#%02x%02x%02x" r g b)
