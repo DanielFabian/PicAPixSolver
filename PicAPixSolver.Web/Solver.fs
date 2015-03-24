@@ -145,17 +145,17 @@ let problem4 =
                                                           
             [                              1;  1;  1;  1; 12;  2;  3;  2;  8;  7;  2;  1;  4;  2; 16 ]
             [                  1;  1;  1;  1;  1;  9;  4;  3;  2;  9;  3;  3;  2;  2;  4;  1; 17;  2 ]
-            [                  1;  1;  1;  1; 10;  2;  1;  3;  9;  3;  3;  4;  5;  3;  4;  5;  1;  1 ]
+            [                  1;  1;  1;  1; 10;  3;  1;  3;  9;  3;  3;  4;  5;  3;  4;  5;  1;  1 ]
             [              6;  1;  1; 10;  3;  2;  1;  2;  1;  8; 13;  1;  6;  1;  7;  2;  1;  2;  2 ]
             [                      1; 13;  1;  1;  1;  1;  1;  1;  7;  3;  3; 12;  9;  3;  1;  1;  1 ]
                                                           
             [                  1;  1;  9;  1;  3;  2;  1;  1;  1;  6;  3;  3; 10; 11;  1;  4;  2;  1 ]
             [                  1;  4;  8;  1;  2;  3;  2;  1;  1;  5; 19; 10;  1;  5;  4;  1;  1;  4 ]
-            [      1;  1;  1;  2;  7;  1;  2;  1;  2;  1;  1;  1;  4;  3; 13;  2;  2;  4;  1;  1;  1 ]
+            [      1;  1;  1;  2;  7;  1;  2;  1;  2;  1;  1;  1;  4;  3; 13;  3;  2;  4;  1;  1;  1 ]
             [  1;  1;  1;  3;  6;  1;  1;  3;  1;  1;  2;  1;  3;  3; 12;  1;  1;  1;  2;  1;  1;  1 ]
             [      5;  6;  1;  1;  1;  1;  1;  1;  1;  1;  2;  3;  5;  3;  1;  1;  1;  2;  2;  1;  1 ]
                                                           
-            [              8;  7;  1;  1;  1;  1;  1;  1;  1;  2; 18;  6;  6;  2;  1;  2;  3;  1;  3 ]
+            [              8;  7;  1;  1;  1;  1;  1;  1;  1;  2; 18;  6;  3;  2;  1;  2;  3;  1;  3 ]
             [     10;  4;  2;  1;  1;  1;  1;  1;  1;  1;  1;  3;  2;  1;  4;  1;  3;  2;  4;  1;  1 ]
             [  3;  1;  6;  2;  3;  1;  1;  1;  1;  1;  1;  3;  1; 11;  2;  2;  7;  2;  5;  1;  2;  1 ]
             [          1;  8;  2;  2;  1;  1;  1;  1;  1;  1;  3; 12;  1;  1;  7;  4;  3;  3;  3;  1 ]
@@ -194,8 +194,125 @@ let problem4 =
 
     let horizontal =
         [
-            [1]
-            [1]
+            [  8;  6;  2;  1;  2;  3                                                         ]
+            [  9;  2; 27;  1;                                                                ]
+            [  3;  3;  2;  3;  1;  1;  1;  1;  1;  1;  1                                     ]
+            [ 20;  1;  3;  1;  1;  1;  1;  1;  1;  1                                         ]
+            [  8; 11;  6;  1;  1;  1;  1;  1;  1                                             ]
+                                                                                             
+            [  8;  7;  5;  3;  1;  1;  3;  5;  1;  1                                         ]
+            [ 10;  8;  5;  3;  1;  1;  1;  1                                                 ]
+            [ 16;  2;  3;  1;  5;  1                                                         ]
+            [ 26;  3; 12;  2;  1;  1;  1                                                     ]
+            [  8;  9;  6;  3;  1;  3;  1;  1;  1;  1;  1                                     ]
+                                                                                             
+            [  3;  7; 15;  1; 12;  1;  1;  1;  1                                             ]
+            [  2;  1; 13;  2;  3;  1;  1;  1;  1                                             ]
+            [  1;  1; 13;  5;  4;  3;  1;  1;  1;  1                                         ]
+            [  1; 12;  3;  9;  2;  5;  1;  1                                                 ]
+            [  1;  9;  2;  9;  1;  1;  1;  1;  1                                             ]
+                                                                                             
+            [  4;  3;  2; 12;  1;  1;  5;  1                                                 ]
+            [  3;  3;  2; 14;  5;  1;  1;  1                                                 ]
+            [  2;  1;  1; 16;  1;  1;  1;  1;  1                                             ]
+            [  2;  1;  1;  3; 14;  1;  1;  1;  1                                             ]
+            [  2;  2;  6;  2;  1; 12;  6;  1;  1                                             ]
+                                                                                             
+            [  2; 12;  2;  2;  8;  9;  1;  1                                                 ]
+            [ 16;  3;  2;  3; 10;  5;  1;  1                                                 ]
+            [  6;  8;  4;  2;  7;  2;  4;  1;  1                                             ]
+            [  2;  5; 10;  2;  5;  1;  5;  1;  1                                             ]
+            [  2;  3;  2;  2;  1;  3;  4;  5;  1;  1                                         ]
+                                                                                             
+            [  1;  3; 11;  2;  1;  4;  1;  1;  5;  1;  1                                     ]
+            [  1;  2;  2;  1;  3;  1;  1;  2;  1;  2;  1;  1                                 ]
+            [  1; 12;  2;  3;  1;  1;  1;  1;  2;  1;  1                                     ]
+            [  1;  2;  2;  5;  1;  2;  1;  1;  1                                             ]
+            [  1;  1; 16;  1;  2;  1;  1;  1;  1                                             ]
+                                                                                             
+            [  1;  1;  1;  5;  6;  3;  2;  1;  1                                             ]
+            [  1;  2; 16;  1;  3;  5;  2;  1;  1                                             ]
+            [  1;  3;  2;  4;  2;  4;  4;  3;  1;  1                                         ]
+            [  1;  4;  4;  8;  2;  1;  4;  2;  2;  1;  1                                     ]
+            [  1;  5;  2;  2;  5;  1;  2;  3;  1;  3;  1;  1                                 ]
+                                                                                             
+            [  1;  6;  2;  3;  4;  2;  1;  2;  2;  1;  1;  1;  1                             ]
+            [ 25;  7;  1;  2;  1;  1;  1;  1;  1;  1                                         ]
+            [  1;  1;  1;  1;  1;  1;  3;  2;  1;  1;  2;  2;  2;  1;  1;  1                 ]
+            [  1;  1;  1;  1;  1;  1;  3;  9;  1;  2;  1;  1;  1;  5;  1                     ]
+            [  1;  1;  1;  1;  1;  1;  4;  9;  1;  5;  1;  1;  1;  1                         ]
+                                                                
+            [  1;  1;  1;  1;  1;  1;  1;  1;  1;  1;  1;  1;  3;  8;  4;  1;  2;  1;  1;  1 ]
+            [  1;  1;  1;  1;  1;  1;  1;  1;  3;  8;  1;  1;  1;  1;  1;  1                 ]
+            [ 21;  1;  3;  9;  2;  1;  1;  1                                                 ]
+            [  1;  3;  1;  4;  7;  2;  1;  1;  1                                             ]
+            [ 20;  3;  1;  1;  3;  8;  3;  1;  1;  1                                         ]
+                                                                                             
+            [ 20;  1;  1;  3;  6;  5;  5;  1;  1                                             ]
+            [ 22;  1;  1;  3;  5;  1;  1;  1;  1                                             ]
+            [ 23;  1;  4;  5;  2;  1;  5;  1                                                 ]
+            [ 26;  1;  1;  3;  2;  3;  1;  1;  1                                             ]
+            [  2; 23;  1;  1;  3;  2;  1;  7;  1;  1                                         ]
+                                                                                             
+            [  1; 23;  1;  1;  4;  1;  1;  4;  1;  1                                         ]
+            [  3; 22;  1;  1;  1;  3;  1;  5;  4;  1;  1                                     ]
+            [  1;  2; 22;  1;  1;  1;  2;  2;  1;  3;  1;  1                                 ]
+            [  1;  1; 22;  1;  1;  1;  2;  1;  1;  5;  1;  1                                 ]
+            [  1;  1; 21;  1;  1;  1;  2;  1;  1;  5;  1;  1                                 ]
+                                                                                             
+            [  2;  2; 15;  4;  1;  1;  1;  3;  1;  1;  1;  1;  1                             ]
+            [  2;  1; 14;  3;  1;  1;  4;  2;  1;  1;  1;  1                                 ]
+            [  1;  1; 14;  2;  1;  1;  3;  3;  1;  6;  1;  1                                 ]
+            [  1;  1;  2;  8;  2;  1;  3;  2;  3;  9;  1;  1                                 ]
+            [  1;  1;  3;  4;  2;  4;  2;  3;  9;  1;  1                                     ]
+                                                                                             
+            [  2;  5;  1;  3;  2;  1;  8;  1;  1                                             ]
+            [  1;  1;  1;  2;  1;  3;  1;  3;  2;  1;  1                                     ]
+            [  1;  1;  1;  1;  1;  1;  3;  2;  1;  3;  4;  1;  1                             ]
+            [  1;  1;  1;  4;  6;  3;  7;  1                                                 ]
+            [  4;  1;  1;  1;  7;  2;  2; 10                                                 ]
+                                                                                             
+            [  2;  3;  1;  2;  1;  1;  1;  2;  6;  1;  2;  1;  4                             ]
+            [  1;  7;  3;  4;  1;  1;  8;  3;  3;  3                                         ]
+            [  1;  1;  1;  1;  3;  2;  4; 19;  1;  3                                         ]
+            [  1;  3;  1;  2;  2;  7; 16;  1;  1;  1;  4                                     ]
+            [  1;  4;  1;  1; 11; 16;  1;  2;  1;  4                                         ]
+                                                                                             
+            [  2;  7;  2;  1;  4; 17;  5                                                     ]
+            [  1;  8;  1;  2; 12;  3;  5                                                     ]
+            [  1;  2;  1;  2;  3; 18;  1;  2;  7                                             ]
+            [  1;  1;  1;  1;  2;  1;  2; 11;  5;  2;  3;  4;  1                             ]
+            [  1;  1;  1;  1;  2;  6;  2;  8;  1                                             ]
+                                                                                             
+            [  1;  1;  1;  1;  2;  3;  6;  1;  1;  3;  5;  1;  1                             ]
+            [  1;  1;  4;  2;  3;  1;  2;  2;  9;  3;  1;  1                                 ]
+            [  1;  1;  3;  1;  2;  2;  3;  3;  2;  8;  1;  1                                 ]
+            [  1;  6;  2;  1;  1;  3;  3;  7;  1;  1                                         ]
+            [  1;  1;  3;  1;  1;  3;  4;  6;  1;  1;  1                                     ]
+                                                                
+            [  2; 10;  1;  2;  1;  3;  6;  3;  1;  1;  1                                     ]
+            [  1;  1;  2;  4;  6;  4;  1;  1;  1                                             ]
+            [  1;  2; 14;  7;  7;  1;  1;  1;  1                                             ]
+            [  2;  3;  1;  3;  5;  8;  1;  1;  1;  1                                         ]
+            [  7; 23; 13;  5;  1                                                             ]
+                                                                                             
+            [  3;  3;  1;  1;  6; 14;  1;  1;  1                                             ]
+            [  5; 17;  2; 15;  1;  1;  1                                                     ]
+            [  2;  2;  1;  5;  1;  1;  1;  3; 17;  1;  1                                     ]
+            [  3;  1; 14;  1;  1;  1;  1; 12;  1;  1;  1                                     ]
+            [  2;  1;  5;  1;  1;  6;  1; 12;  1;  1;  1                                     ]
+                                                                                             
+            [  2; 10;  1;  1;  2;  1;  2; 13;  1;  1;  1                                     ]
+            [  1;  1; 10;  5;  2;  2; 16;  5;  1                                             ]
+            [  2; 10;  1;  1;  2;  5; 13;  1;  1;  1                                         ]
+            [  3;  9;  1;  7;  1;  1;  1;  1;  1;  1;  1;  1                                 ]
+            [  3;  2;  1;  1;  1;  1;  7;  1;  1;  1;  5;  1;  1                             ]
+                                                                                             
+            [  1;  2;  1;  5;  1;  3;  1;  1;  1;  1;  1;  1                                 ]
+            [  2;  1;  1;  1;  1;  1;  1;  2;  2;  1;  1;  1;  1;  1;  1                     ]
+            [  2;  2;  1;  1;  1;  1;  1;  1;  1;  1;  1;  1;  1;  1;  1                     ]
+            [  1; 27;  2;  1; 18;  1                                                         ]
+            [  3;  2;  2;  3                                                                 ]
         ]
 
     { Vertical = asBlack vertical
@@ -203,25 +320,25 @@ let problem4 =
 
 let candidates length numbers =
     let rec candidates = function
-        | 0, [], _ -> [[]]
-        | len, [], _ when len > 0 -> [List.replicate len white]
-        | len, [], _ -> []
-        | l, (num, col)::rest, _ when num > l -> []
+        | 0, [], _ -> Seq.singleton []
+        | len, [], _ when len > 0 -> Seq.singleton (List.replicate len white)
+        | len, [], _ -> Seq.empty
+        | l, (num, col)::rest, _ when num > l -> Seq.empty
         | l, ((num, col)::rest as numbers), oldCol ->
-            [
+            seq {
                 if Some col = oldCol then
-                    yield! candidates (l - (num + 1), rest, Some col) |> List.map (fun l -> white :: List.replicate num col @ l)
+                    yield! candidates (l - (num + 1), rest, Some col) |> Seq.map (fun l -> white :: List.replicate num col @ l)
                 else
-                    yield! candidates (l - num, rest, Some col) |> List.map (fun l -> List.replicate num col @ l)
-                yield! candidates (l - 1, numbers, oldCol) |> List.map (fun l -> white :: l)
-            ]
+                    yield! candidates (l - num, rest, Some col) |> Seq.map (fun l -> List.replicate num col @ l)
+                yield! candidates (l - 1, numbers, oldCol) |> Seq.map (fun l -> white :: l)
+            }
 
     candidates (length, numbers, None)
 
 let constraintSets candidates =
-    let len = List.head candidates |> List.length
+    let len = Seq.head candidates |> List.length
     candidates
-    |> List.fold (List.map2 (fun possibleColors fieldColor -> Set.add fieldColor possibleColors))
+    |> Seq.fold (List.map2 (fun possibleColors fieldColor -> Set.add fieldColor possibleColors))
         (List.replicate len Set.empty)    
 
 type SolverBoard = Color Set [,]
@@ -237,22 +354,32 @@ let problemInfo problem =
 
     colors, height, width
 
+let printSum array =
+    let sum = ref 0
+    Array2D.iter (fun set -> sum := !sum + Set.count set - 1) array
+
+    printfn "%d" !sum
+
 let rec reduce problem board =
     let newBoard = Array2D.copy board
     let height, width = Array2D.length1 board, Array2D.length2 board
     problem.Vertical
     |> List.iteri (fun row line ->
         candidates width line
-        |> List.filter (List.mapi (fun col value -> Set.contains value newBoard.[row, col]) >> List.forall id)
+        |> Seq.filter (List.mapi (fun col value -> Set.contains value newBoard.[row, col]) >> List.forall id)
         |> constraintSets
-        |> List.iteri (fun col colors -> newBoard.[row, col] <- Set.intersect colors newBoard.[row, col]))
+        |> List.iteri (fun col colors ->
+            newBoard.[row, col] <- Set.intersect colors newBoard.[row, col]
+            printSum newBoard))
 
     problem.Horizontal
     |> List.iteri (fun col line ->
         candidates height line
-        |> List.filter (List.mapi (fun row value -> Set.contains value newBoard.[row, col]) >> List.forall id)
+        |> Seq.filter (List.mapi (fun row value -> Set.contains value newBoard.[row, col]) >> List.forall id)
         |> constraintSets
-        |> List.iteri (fun row colors -> newBoard.[row, col] <- Set.intersect colors newBoard.[row, col]))
+        |> List.iteri (fun row colors ->
+            newBoard.[row, col] <- Set.intersect colors newBoard.[row, col]
+            printSum newBoard))
 
     if newBoard = board then
         for i = 0 to width - 1 do
@@ -286,5 +413,5 @@ let defaultModel =
 //        let g = j * 255 / (y - 1)
 //        let b = 255
 //        sprintf "#%02x%02x%02x" r g b)
-    solve problem3
+    solve problem4
     |> Array2D.map (fun (r, g, b) -> sprintf "#%02x%02x%02x" r g b)
